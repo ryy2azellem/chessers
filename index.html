@@ -86,7 +86,7 @@
     <img src="image2.jpg" alt="Cute pic 2">
   </div>
 
-  <!-- Klaviyo Signup Form -->
+  <!-- Klaviyo Signup Form placeholder -->
   <div class="klaviyo-form-XGpPZJ"></div>
 
   <script>
@@ -104,10 +104,14 @@
     setInterval(createHeart, 300);
   </script>
 
-  <!-- Load Klaviyo embed JS -->
+  <!-- Klaviyo JS library -->
   <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YOUR_COMPANY_ID"></script>
+
+  <!-- Custom Trigger to open the form -->
+  <script>
+    window._klOnsite = window._klOnsite || [];
+    window._klOnsite.push(['openForm', 'XGpPZJ']);
+  </script>
 
 </body>
 </html>
-
-    
