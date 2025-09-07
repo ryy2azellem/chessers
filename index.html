@@ -1,119 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Emporium - Fine Chessboards and Pieces</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 19th Months of Love ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
 
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 0.5em 0;
-            text-align: center;
-        }
+    h1 {
+      color: #fff;
+      font-size: 4em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px #d45d79;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5em 1em;
-        }
+    .preview-images {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
 
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            overflow: hidden; /* Clearfix for floats */
-        }
+    .preview-images img {
+      width: 150px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
 
-        .product {
-            width: 30%;
-            float: left;
-            margin: 10px;
-            padding: 15px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
+    .btn {
+      background-color: #ff6b81;
+      color: #fff;
+      border: none;
+      padding: 20px 40px;
+      font-size: 1.5em;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      margin-bottom: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
 
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
+    .btn:hover {
+      transform: scale(1.1);
+    }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed; /* or 'static' if you don't want it fixed */
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6b81;
+      transform: rotate(-45deg);
+      animation: float 5s infinite;
+      opacity: 0.8;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6b81;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: 10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-1000px) rotate(-45deg); opacity: 0; }
+    }
+  </style>
 </head>
 <body>
+  <h1>Happy 19th Months of Love ❤️</h1>
 
-    <header>
-        <h1>Chess Emporium</h1>
-        <p>The Finest Chessboards and Pieces Available</p>
-    </header>
+  <div class="preview-images">
+    <img src="image1.jpg" alt="Cute pic 1">
+    <img src="image2.jpg" alt="Cute pic 2">
+  </div>
 
-    <nav>
-        <a href="#">Home</a> |
-        <a href="#">Chessboards</a> |
-        <a href="#">Chess Pieces</a> |
-        <a href="#">Sets</a> |
-        <a href="#">About Us</a> |
-        <a href="#">Contact</a>
-    </nav>
+  <button id="revealBtn" class="btn">Click Here 💌</button>
 
-    <div class="container">
+  <a href="https://yourusername.github.io/love-letter/" target="_blank" class="btn">
+    Open on GitHub Pages 🥰
+  </a>
 
-        <div class="product">
-            <img src="placeholder-chessboard.jpg" alt="Chessboard 1">
-            <h3>Elegant Wooden Chessboard</h3>
-            <p>Handcrafted wooden chessboard with exquisite detail.</p>
-            <p>Price: $199.99</p>
-            <button>Add to Cart</button>
-        </div>
+  <script>
+    const btn = document.getElementById('revealBtn');
 
-        <div class="product">
-            <img src="placeholder-chess pieces.jpg" alt="Chess Pieces 1">
-            <h3>Staunton Chess Pieces</h3>
-            <p>Classic Staunton chess pieces, weighted and felted.</p>
-            <p>Price: $129.99</p>
-            <button>Add to Cart</button>
-        </div>
+    btn.addEventListener('click', () => {
+      alert("Check your email for your sweet message! 💖"); // optional
+    });
 
-         <div class="product">
-            <img src="placeholder-chess-set.jpg" alt="Chess Set 1">
-            <h3>Deluxe Chess Set</h3>
-            <p>Complete chess set with board and pieces.</p>
-            <p>Price: $299.99</p>
-            <button>Add to Cart</button>
-        </div>
+    // Floating hearts effect
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      heart.style.width = heart.style.height = (Math.random() * 20 + 10) + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
 
-        <!-- Add more product divs here -->
-
-    </div>
-
-    <footer>
-        &copy; 2024 Chess Emporium | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </footer>
-
+    setInterval(createHeart, 300);
+  </script>
 </body>
 </html>
+
+    
