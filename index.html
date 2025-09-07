@@ -70,43 +70,26 @@
       100% { transform: translateY(-1000px) rotate(-45deg); opacity: 0; }
     }
 
-    /* Klaviyo form default style container */
-    .klaviyo-form-XGpPZJ {
-      display: flex !important;
-      justify-content: center !important;
-      margin-top: 20px !important;
-      width: 100% !important;
+    /* Subscribe button design */
+    .subscribe-button {
+      background: linear-gradient(45deg, #ff6b81, #ff3b5f);
+      color: white;
+      border-radius: 50px;
+      padding: 18px 40px;
+      font-size: 1.6em;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(255, 107, 129, 0.6);
+      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
     }
 
-    /* Override Klaviyo default styles */
-    .klaviyo-form-XGpPZJ input[type="email"],
-    .klaviyo-form-XGpPZJ input[type="text"] {
-        border-radius: 10px !important;
-        border: 2px solid #ff6b81 !important;
-        padding: 10px !important;
-        font-size: 1em !important;
-        color: #333 !important;
-    }
-
-    .klaviyo-form-XGpPZJ input[type="email"]::placeholder,
-    .klaviyo-form-XGpPZJ input[type="text"]::placeholder {
-        color: #ff6b81 !important;
-        font-weight: bold !important;
-    }
-
-    .klaviyo-form-XGpPZJ button {
-        background-color: #ff6b81 !important;
-        color: white !important;
-        border-radius: 50px !important;
-        padding: 12px 25px !important;
-        font-size: 1.2em !important;
-        cursor: pointer !important;
-        transition: transform 0.2s !important;
-    }
-
-    .klaviyo-form-XGpPZJ button:hover {
-        transform: scale(1.1) !important;
-        background-color: #ff3b5f !important;
+    .subscribe-button:hover {
+      transform: scale(1.1) translateY(-3px);
+      background: linear-gradient(45deg, #ff3b5f, #ff6b81);
+      box-shadow: 0 8px 20px rgba(255, 59, 95, 0.7);
     }
   </style>
 </head>
@@ -118,8 +101,10 @@
     <img src="image2.jpg" alt="Cute pic 2">
   </div>
 
-  <!-- Klaviyo Signup Form placeholder -->
-  <div class="klaviyo-form-XGpPZJ"></div>
+  <!-- Subscribe Page Button -->
+  <a href="YOUR_SUBSCRIBE_PAGE_URL" target="_blank" class="subscribe-button">
+    Click Here If You Love Me ❤️
+  </a>
 
   <script>
     // Floating hearts effect
@@ -135,17 +120,5 @@
 
     setInterval(createHeart, 300);
   </script>
-
-  <!-- Klaviyo JS library -->
-  <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XJ2BKs"></script>
-
-  <!-- Custom Trigger to open the form -->
-  <script>
-    window._klOnsite = window._klOnsite || [];
-    window._klOnsite.push(['openForm', 'XGpPZJ']);
-  </script>
-
 </body>
 </html>
-
-    
