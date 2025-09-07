@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -70,11 +70,52 @@
       100% { transform: translateY(-1000px) rotate(-45deg); opacity: 0; }
     }
 
-    /* Optional: Style the Klaviyo form container */
-    .klaviyo-form-XGpPZJ {
-      margin-top: 20px;
-      width: 300px;
-      max-width: 90%;
+    /* Styled Klaviyo form */
+    .klaviyo-form-XGpPZJ form {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .klaviyo-form-XGpPZJ h2 {
+      color: #ff6b81;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .klaviyo-form-XGpPZJ input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ff6b81;
+      outline: none;
+      font-size: 1em;
+    }
+
+    .klaviyo-form-XGpPZJ input:focus {
+      border-color: #ff3b5f;
+    }
+
+    .klaviyo-form-XGpPZJ button {
+      background-color: #ff6b81;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .klaviyo-form-XGpPZJ button:hover {
+      transform: scale(1.1);
+      background-color: #ff3b5f;
     }
   </style>
 </head>
@@ -115,4 +156,4 @@
 
 </body>
 </html>
-
+    
