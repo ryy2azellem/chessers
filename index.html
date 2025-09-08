@@ -19,6 +19,7 @@
       min-height: 100vh;
       overflow: hidden;
       text-align: center;
+      position: relative;
     }
 
     h1 {
@@ -28,18 +29,22 @@
       text-shadow: 2px 2px 8px #d45d79;
     }
 
-    .preview-images {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 30px;
+    /* Stickers */
+    .sticker {
+      position: absolute;
+      width: 120px;
+      height: auto;
+      z-index: 5;
     }
 
-    .preview-images img {
-      width: 150px;
+    .sticker.top-left { top: 10px; left: 10px; }
+    .sticker.top-right { top: 10px; right: 10px; }
+    .sticker.bottom-left { bottom: 10px; left: 10px; }
+    .sticker.bottom-right { bottom: 10px; right: 10px; }
+
+    .sticker img {
+      width: 100%;
       height: auto;
-      border-radius: 15px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     }
 
     /* Klaviyo form default style container */
@@ -147,14 +152,25 @@
 <body>
   <h1>Happy 19th Months of Love ❤️</h1>
 
+  <!-- Stickers -->
+  <div class="sticker top-left">
+    <img src="bubu-dudu1.png" alt="Bubu & Dudu">
+  </div>
+  <div class="sticker top-right">
+    <img src="bubu-dudu2.png" alt="Bubu & Dudu">
+  </div>
+  <div class="sticker bottom-left">
+    <img src="bubu-dudu3.png" alt="Bubu & Dudu">
+  </div>
+  <div class="sticker bottom-right">
+    <img src="bubu-dudu4.png" alt="Bubu & Dudu">
+  </div>
 
   <!-- Klaviyo Signup Form placeholder -->
   <div class="klaviyo-form-XGpPZJ"></div>
 
   <!-- Heart button to go to quotes page -->
-  <div class="heart-button" onclick="window.location.href='quotes.html'">
-  
-  </div>
+  <div class="heart-button" onclick="window.location.href='quotes.html'"></div>
 
   <script>
     // Floating hearts effect
@@ -178,11 +194,5 @@
   </script>
 </body>
 </html>
- 
-       
-
-
-
-
-
-
+        
+  
