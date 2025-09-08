@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -16,7 +16,8 @@
       background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
       color: #fff;
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 20px;
     }
 
     h1 {
@@ -41,20 +42,41 @@
       gap: 20px;
       margin-bottom: 20px;
     }
+
+    .pic-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .gallery img {
-      width: 200px;
-      height: 200px;
+      width: 460px;  /* larger for better visibility */
+      height: 613px; /* maintain 1536:2048 ratio */
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .gallery img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       box-shadow: 0 12px 30px rgba(0,0,0,0.5);
     }
 
-    /* Heart-shaped back button */
+    .caption {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #000; /* black text */
+      text-shadow: 
+        0 0 5px #ff77aa,
+        0 0 10px #ff66ff,
+        0 0 20px #ff4da6,
+        0 0 30px #ff3399; /* pink glow */
+      text-align: center;
+      max-width: 460px; /* match new image width */
+      transition: all 0.3s ease;
+    }
+
     .heart-button {
       position: relative;
       width: 80px;
@@ -80,17 +102,7 @@
       transform: scale(1.2) rotate(-45deg);
       background-color: #ff3b5f;
     }
-    .heart-button span {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-    }
 
-    /* Falling hearts background */
     .hearts {
       position: fixed;
       top: 0;
@@ -119,18 +131,26 @@
   <div class="quote"></div>
 
   <div class="gallery">
-    <img src="pic1.jpg" alt="Us 1">
-    <img src="pic2.jpg" alt="Us 2">
-    <img src="pic3.jpg" alt="Us 3">
-    <img src="image1_transfer_2025-09-08_155529.jpg" alt="Us 4">
+    <div class="pic-container">
+      <img src="pic1.jpg" alt="Us 1">
+      <div class="caption">Your text for pic 1 here</div>
+    </div>
+    <div class="pic-container">
+      <img src="pic2.jpg" alt="Us 2">
+      <div class="caption">Your text for pic 2 here</div>
+    </div>
+    <div class="pic-container">
+      <img src="pic3.jpg" alt="Us 3">
+      <div class="caption">Your text for pic 3 here</div>
+    </div>
+    <div class="pic-container">
+      <img src="image1_transfer_2025-09-08_155529.jpg" alt="Us 4">
+      <div class="caption">Your text for pic 4 here</div>
+    </div>
   </div>
 
-  <!-- Heart button to go back to index -->
-  <div class="heart-button" onclick="window.location.href='index.html'">
-    
-  </div>
+  <div class="heart-button" onclick="window.location.href='index.html'"></div>
 
-  <!-- Falling hearts -->
   <div class="hearts">
     <div class="heart" style="left:15%; animation-duration:7s;">❤</div>
     <div class="heart" style="left:35%; animation-duration:5s;">❤</div>
@@ -140,7 +160,6 @@
   </div>
 
   <script>
-    // Rotating quotes
     window.onload = () => {
       const quotes = [
         "Every love story is beautiful, pero ours is my favorite. 💕",
@@ -167,7 +186,6 @@
       }, 5000);
     };
 
-    // Optional: Add floating hearts for this page
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -180,4 +198,4 @@
     setInterval(createHeart, 400);
   </script>
 </body>
-</html>
+</html>        
