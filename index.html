@@ -109,12 +109,25 @@
     }
     .heart-button span {
       position: absolute;
-      top: 30%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
       color: white;
-      font-size: 16px;
+      font-size: 28px;
       font-weight: bold;
+      text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
+      animation: arrowGlow 1.5s infinite alternate;
+    }
+
+    @keyframes arrowGlow {
+      0% {
+        text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
+        opacity: 0.8;
+      }
+      100% {
+        text-shadow: 0 0 12px #ff3b5f, 0 0 25px #ff6b81, 0 0 40px #ffdde1;
+        opacity: 1;
+      }
     }
 
     /* Floating hearts */
@@ -168,7 +181,9 @@
   <div class="klaviyo-form-XGpPZJ"></div>
 
   <!-- Heart button to go to quotes page -->
-  <div class="heart-button" onclick="window.location.href='quotes.html'"></div>
+  <div class="heart-button" onclick="window.location.href='quotes.html'">
+    <span>➮</span>
+  </div>
 
   <script>
     // Floating hearts effect
@@ -204,5 +219,4 @@
   </script>
 </body>
 </html>
-      
-  
+              
