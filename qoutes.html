@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 19th Months of Love - Quotes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ff6fa5, 0 0 20px #ff3b8d, 0 0 30px #ff1a75;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 25px;
+      max-width: 600px;
+      min-height: 50px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.3);
+      transition: opacity 1s ease;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Heart-shaped back button */
+    .heart-button {
+      position: relative;
+      width: 80px;
+      height: 70px;
+      background-color: #ff6b81;
+      transform: rotate(-45deg);
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      margin-top: 20px;
+    }
+    .heart-button::before,
+    .heart-button::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 70px;
+      background-color: #ff6b81;
+      border-radius: 50%;
+    }
+    .heart-button::before { top: -35px; left: 0; }
+    .heart-button::after { left: 35px; top: 0; }
+    .heart-button:hover {
+      transform: scale(1.2) rotate(-45deg);
+      background-color: #ff3b5f;
+    }
+    .heart-button span {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Falling hearts background */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+      to { transform: translateY(100vh) scale(1.5); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Happy 19th Months of Love 💖</h1>
+
+  <div class="quote"></div>
+
+  <div class="gallery">
+    <img src="pic1.jpg" alt="Us 1">
+    <img src="pic2.jpg" alt="Us 2">
+    <img src="pic3.jpg" alt="Us 3">
+    <img src="pic4.jpg" alt="Us 4">
+  </div>
+
+  <!-- Heart button to go back to index -->
+  <div class="heart-button" onclick="window.location.href='index.html'">
+    <span>Back ❤️</span>
+  </div>
+
+  <!-- Falling hearts -->
+  <div class="hearts">
+    <div class="heart" style="left:15%; animation-duration:7s;">❤</div>
+    <div class="heart" style="left:35%; animation-duration:5s;">❤</div>
+    <div class="heart" style="left:55%; animation-duration:6s;">❤</div>
+    <div class="heart" style="left:75%; animation-duration:4s;">❤</div>
+    <div class="heart" style="left:90%; animation-duration:8s;">❤</div>
+  </div>
+
+  <script>
+    // Rotating quotes
+    window.onload = () => {
+      const quotes = [
+        "Every love story is beautiful, pero ours is my favorite. 💕",
+        "Sa’yo lang ako nahulog nang ganito… and I’ll never regret it. 😍",
+        "Ikaw ang aking today and all of my tomorrows. 🌸",
+        "I love you more than yesterday, pero less than tomorrow. 💖",
+        "Hawak kamay, sabay tayong mangarap at magmahal. 🌙✨"
+      ];
+      let i = 0;
+      const quoteEl = document.querySelector(".quote");
+      quoteEl.textContent = quotes[i];
+      setInterval(() => {
+        i = (i + 1) % quotes.length;
+        quoteEl.style.opacity = 0;
+        setTimeout(() => {
+          quoteEl.textContent = quotes[i];
+          quoteEl.style.opacity = 1;
+        }, 1000);
+      }, 5000);
+    };
+
+    // Optional: Add floating hearts for this page
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
