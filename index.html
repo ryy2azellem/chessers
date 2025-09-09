@@ -39,7 +39,7 @@
       text-shadow: 0 0 15px #ff6b81, 2px 2px 8px #d45d79;
     }
 
-    /* Klaviyo form default style container */
+    /* Klaviyo form container */
     .klaviyo-form-XGpPZJ {
       display: flex !important;
       justify-content: center !important;
@@ -47,7 +47,7 @@
       width: 100% !important;
     }
 
-    /* Override Klaviyo default styles */
+    /* Klaviyo input overrides */
     .klaviyo-form-XGpPZJ input[type="email"],
     .klaviyo-form-XGpPZJ input[type="text"] {
         border-radius: 10px !important;
@@ -79,7 +79,7 @@
         box-shadow: 0 0 15px #ff6b81;
     }
 
-    /* Smooth rounded heart button */
+    /* Rounded heart button with pulse */
     .heart-button {
       position: relative;
       width: 140px;
@@ -93,11 +93,18 @@
       margin-top: 20px;
       clip-path: path("M70 130 C20 90, 0 50, 35 25 A35 35,0,0,1,70 50 A35 35,0,0,1,105 25 C140 50,120 90,70 130 Z");
       box-shadow: 0 0 15px rgba(255,107,129,0.8);
+      animation: pulse 1.5s infinite;
     }
     .heart-button:hover {
       transform: scale(1.1);
       background-color: #ff3b5f;
       box-shadow: 0 0 25px #ff3b5f;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     .heart-button span {
@@ -118,46 +125,25 @@
         opacity: 1;
       }
     }
-
-    /* Floating hearts */
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff6b81;
-      transform: rotate(-45deg);
-      animation: float 5s infinite;
-      opacity: 0.8;
-    }
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff6b81;
-      border-radius: 50%;
-    }
-    .heart::before { top: -10px; left: 0; }
-    .heart::after { left: 10px; top: 0; }
-
-    @keyframes float {
-      0% { transform: translateY(0) rotate(-45deg); opacity: 0.8; }
-      50% { transform: translateY(-50px) rotate(-45deg); opacity: 1; }
-      100% { transform: translateY(0) rotate(-45deg); opacity: 0.8; }
-    }
   </style>
 </head>
 <body>
   <h1>Happy 19th Months of Love ❤️</h1>
 
-  <!-- Klaviyo form -->
+  <!-- Klaviyo signup form -->
   <div class="klaviyo-form-XGpPZJ"></div>
 
   <!-- Rounded heart button -->
   <div class="heart-button" onclick="window.location.href='quotes.html'">
     <span>➮</span>
   </div>
+
+  <!-- Klaviyo JS -->
+  <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XJ2BKs"></script>
+  <script>
+    window._klOnsite = window._klOnsite || [];
+    window._klOnsite.push(['openForm', 'XGpPZJ']);
+  </script>
 </body>
 </html>
-            
+      
