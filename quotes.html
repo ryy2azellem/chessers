@@ -50,8 +50,8 @@
     }
 
     .gallery img {
-      width: 153.6px; /* scaled down for display */
-      height: 204.8px; /* maintain 1536:2048 ratio */
+      width: 153.6px;
+      height: 204.8px;
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -66,41 +66,53 @@
     .caption {
       margin-top: 10px;
       font-size: 1rem;
-      color: #000; /* black text */
+      color: #000;
       text-shadow: 
         0 0 5px #ff77aa,
         0 0 10px #ff66ff,
         0 0 20px #ff4da6,
-        0 0 30px #ff3399; /* pink glow */
+        0 0 30px #ff3399;
       text-align: center;
-      max-width: 153.6px; /* match image width */
+      max-width: 153.6px;
       transition: all 0.3s ease;
     }
 
+    /* SAME HEART STYLE AS INDEX.HTML */
     .heart-button {
       position: relative;
-      width: 80px;
-      height: 70px;
+      width: 120px;
+      height: 100px;
       background-color: #ff6b81;
-      transform: rotate(-45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      transition: transform 0.2s, background-color 0.2s;
-      margin-top: 20px;
+      margin-top: 30px;
+      clip-path: path("M 60 100 C 20 70, 0 40, 30 20 A 20 20, 0, 1, 1, 60 40 A 20 20, 0, 1, 1, 90 20 C 120 40, 100 70, 60 100 Z");
+      box-shadow: 0 0 15px rgba(255,107,129,0.8);
+      transition: transform 0.2s, background-color 0.2s, box-shadow 0.3s;
     }
-    .heart-button::before,
-    .heart-button::after {
-      content: "";
-      position: absolute;
-      width: 80px;
-      height: 70px;
-      background-color: #ff6b81;
-      border-radius: 50%;
-    }
-    .heart-button::before { top: -35px; left: 0; }
-    .heart-button::after { left: 35px; top: 0; }
     .heart-button:hover {
-      transform: scale(1.2) rotate(-45deg);
+      transform: scale(1.1);
       background-color: #ff3b5f;
+      box-shadow: 0 0 25px #ff3b5f;
+    }
+    .heart-button span {
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
+      animation: arrowGlow 1.5s infinite alternate;
+    }
+    @keyframes arrowGlow {
+      0% {
+        text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
+        opacity: 0.8;
+      }
+      100% {
+        text-shadow: 0 0 12px #ff3b5f, 0 0 25px #ff6b81, 0 0 40px #ffdde1;
+        opacity: 1;
+      }
     }
 
     .hearts {
@@ -149,7 +161,10 @@
     </div> 
   </div>
 
-  <div class="heart-button" onclick="window.location.href='index.html'"></div>
+  <!-- Go back heart button (same as index.html style) -->
+  <div class="heart-button" onclick="window.location.href='index.html'">
+    <span>➮</span>
+  </div>
 
   <div class="hearts">
     <div class="heart" style="left:15%; animation-duration:7s;">❤</div>
@@ -199,3 +214,4 @@
   </script>
 </body>
 </html>
+        
