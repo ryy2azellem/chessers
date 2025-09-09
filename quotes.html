@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,8 +50,8 @@
     }
 
     .gallery img {
-      width: 153.6px;
-      height: 204.8px;
+      width: 153.6px; /* scaled down for display */
+      height: 204.8px; /* maintain 1536:2048 ratio */
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -74,47 +74,34 @@
         0 0 30px #ff3399;
       text-align: center;
       max-width: 153.6px;
-      transition: all 0.3s ease;
     }
 
-    /* SAME HEART STYLE AS INDEX.HTML */
+    /* Heart button gaya ng index.html */
     .heart-button {
       position: relative;
-      width: 120px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       background-color: #ff6b81;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      clip-path: path("M 40 70 L 10 40 A 15 15 0 0 1 40 20 A 15 15 0 0 1 70 40 Z");
       cursor: pointer;
-      margin-top: 30px;
-      clip-path: path("M 60 100 C 20 70, 0 40, 30 20 A 20 20, 0, 1, 1, 60 40 A 20 20, 0, 1, 1, 90 20 C 120 40, 100 70, 60 100 Z");
-      box-shadow: 0 0 15px rgba(255,107,129,0.8);
-      transition: transform 0.2s, background-color 0.2s, box-shadow 0.3s;
+      transition: transform 0.2s, background-color 0.2s;
+      margin-top: 20px;
     }
     .heart-button:hover {
       transform: scale(1.1);
       background-color: #ff3b5f;
-      box-shadow: 0 0 25px #ff3b5f;
     }
     .heart-button span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
       color: white;
-      font-size: 40px;
       font-weight: bold;
-      text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
-      animation: arrowGlow 1.5s infinite alternate;
-    }
-    @keyframes arrowGlow {
-      0% {
-        text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
-        opacity: 0.8;
-      }
-      100% {
-        text-shadow: 0 0 12px #ff3b5f, 0 0 25px #ff6b81, 0 0 40px #ffdde1;
-        opacity: 1;
-      }
     }
 
+    /* Floating hearts bg */
     .hearts {
       position: fixed;
       top: 0;
@@ -161,7 +148,7 @@
     </div> 
   </div>
 
-  <!-- Go back heart button (same as index.html style) -->
+  <!-- Go Back button -->
   <div class="heart-button" onclick="window.location.href='index.html'">
     <span>➮</span>
   </div>
@@ -214,4 +201,4 @@
   </script>
 </body>
 </html>
-        
+      
