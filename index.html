@@ -79,41 +79,30 @@
         box-shadow: 0 0 15px #ff6b81;
     }
 
-    /* Heart-shaped button to go to quotes page */
+    /* Smooth rounded heart button */
     .heart-button {
       position: relative;
-      width: 80px;
-      height: 70px;
+      width: 140px;
+      height: 130px;
       background-color: #ff6b81;
-      transform: rotate(-45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       transition: transform 0.2s, background-color 0.2s, box-shadow 0.3s;
       margin-top: 20px;
+      clip-path: path("M70 130 C20 90, 0 50, 35 25 A35 35,0,0,1,70 50 A35 35,0,0,1,105 25 C140 50,120 90,70 130 Z");
       box-shadow: 0 0 15px rgba(255,107,129,0.8);
     }
-    .heart-button::before,
-    .heart-button::after {
-      content: "";
-      position: absolute;
-      width: 80px;
-      height: 70px;
-      background-color: #ff6b81;
-      border-radius: 50%;
-    }
-    .heart-button::before { top: -35px; left: 0; }
-    .heart-button::after { left: 35px; top: 0; }
     .heart-button:hover {
-      transform: scale(1.2) rotate(-45deg);
+      transform: scale(1.1);
       background-color: #ff3b5f;
       box-shadow: 0 0 25px #ff3b5f;
     }
+
     .heart-button span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
       color: white;
-      font-size: 28px;
+      font-size: 42px;
       font-weight: bold;
       text-shadow: 0 0 6px #ff3b5f, 0 0 12px #ff6b81;
       animation: arrowGlow 1.5s infinite alternate;
@@ -153,70 +142,22 @@
     .heart::after { left: 10px; top: 0; }
 
     @keyframes float {
-      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
-      100% { transform: translateY(-1000px) rotate(-45deg); opacity: 0; }
-    }
-
-    /* Sparkles effect */
-    .sparkle {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 8px white;
-      animation: twinkle 2s infinite;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.2); }
+      0% { transform: translateY(0) rotate(-45deg); opacity: 0.8; }
+      50% { transform: translateY(-50px) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(0) rotate(-45deg); opacity: 0.8; }
     }
   </style>
 </head>
 <body>
   <h1>Happy 19th Months of Love ❤️</h1>
 
-  <!-- Klaviyo Signup Form placeholder -->
+  <!-- Klaviyo form -->
   <div class="klaviyo-form-XGpPZJ"></div>
 
-  <!-- Heart button to go to quotes page -->
+  <!-- Rounded heart button -->
   <div class="heart-button" onclick="window.location.href='quotes.html'">
     <span>➮</span>
   </div>
-
-  <script>
-    // Floating hearts effect
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      heart.style.width = heart.style.height = (Math.random() * 20 + 10) + 'px';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }
-    setInterval(createHeart, 300);
-
-    // Sparkle effect
-    function createSparkle() {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = Math.random() * window.innerHeight + 'px';
-      sparkle.style.animationDuration = (Math.random() * 2 + 1) + 's';
-      document.body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 4000);
-    }
-    setInterval(createSparkle, 500);
-  </script>
-
-  <!-- Klaviyo JS library -->
-  <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XJ2BKs"></script>
-  <script>
-    window._klOnsite = window._klOnsite || [];
-    window._klOnsite.push(['openForm', 'XGpPZJ']);
-  </script>
 </body>
 </html>
-              
+            
